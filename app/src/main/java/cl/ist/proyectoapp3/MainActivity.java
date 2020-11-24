@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 EditText ETNombre = (EditText) findViewById(R.id.etNombreFoto);
                 String StNombre = ETNombre.getText().toString();
-                final Image ImageView = (Image) findViewById(R.id.imageViewUsuario);
+                ImageView Image = (Image) findViewById(R.id.imageViewUsuario);
 
                 Intent sIntent = new Intent(MainActivity.this, AResultado.class);
                 sIntent.putExtra("STNombre", StNombre);
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
                     public void run() {
                         final Bitmap bitmap =
                                 loadImageFromNetwork("http://IP.com/image.png");
-                        /*ImageView.post(new Runnable() {
+                        ImageView.post(new Runnable() {
                             public void run() {
                                 ImageView mImageView = null;
                                 ImageView.setImageBitmap(bitmap);
@@ -43,7 +43,11 @@ public class MainActivity extends AppCompatActivity {
                         });
                     }
                 }).start();
+
+                private class LoadImage extends AsyncTask<String... strings> {
+                    return null;
+                }
             }
         });
     }
-}*/
+}
